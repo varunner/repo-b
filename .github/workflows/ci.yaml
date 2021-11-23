@@ -1,0 +1,20 @@
+name: "Repo B CI"
+
+on:
+  workflow_call:
+    inputs:
+      name: 
+        description: Event name
+        required: true
+      data:
+        description: Event data
+        required: true
+
+jobs:
+  execute:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Log
+        shell: bash
+        run: |
+          echo "${{ inputs.name }}"
