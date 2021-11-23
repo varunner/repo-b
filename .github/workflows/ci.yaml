@@ -1,16 +1,9 @@
 name: "Repo B CI"
 
 on:
-  workflow_call:
-    inputs:
-      name: 
-        description: Event name
-        required: true
-        type: string
-      data:
-        description: Event data
-        required: true
-        type: string
+  repository_dispatch:
+    types: 
+      - trigger
 
 jobs:
   execute:
@@ -25,4 +18,4 @@ jobs:
       - name: Log
         shell: bash
         run: |
-          echo "${{ inputs.name }}"
+          echo ${{ github.event.client_payload.sha }}
