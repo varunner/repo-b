@@ -6,9 +6,11 @@ on:
       name: 
         description: Event name
         required: true
+        type: string
       data:
         description: Event data
         required: true
+        type: string
 
 jobs:
   execute:
