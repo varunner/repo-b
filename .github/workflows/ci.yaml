@@ -19,11 +19,5 @@ jobs:
       - name: Log
         shell: bash
         run: |
+          echo "$GITHUB_EVENT_NAME"
           echo ${{ github.event.client_payload.sha }}
-
-      - name: Log 2
-        uses: actions/github-script@v5
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            console.log('${{ fromJSON(github.event) }}')
