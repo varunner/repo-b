@@ -3,7 +3,8 @@ name: "Repo B CI"
 on:
   repository_dispatch:
     types: 
-      - trigger
+      - create
+      - delete
 
 jobs:
   execute:
@@ -19,3 +20,4 @@ jobs:
         shell: bash
         run: |
           echo ${{ github.event.client_payload.sha }}
+          echo "${{ fromJson(github.event) }}"
