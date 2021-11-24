@@ -20,4 +20,4 @@ jobs:
         shell: bash
         run: |
           echo ${{ github.event.client_payload.sha }}
-          echo "${{ fromJson(github.event) }}"
+          echo "${{ github.event.event_type }}"
