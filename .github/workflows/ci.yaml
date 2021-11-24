@@ -19,5 +19,5 @@ jobs:
       - name: Log
         shell: bash
         run: |
-          echo "$GITHUB_EVENT_NAME"
+          echo "${{ github.event.action }}"
           echo ${{ github.event.client_payload.sha }}
