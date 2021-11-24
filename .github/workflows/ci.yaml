@@ -20,4 +20,10 @@ jobs:
         shell: bash
         run: |
           echo ${{ github.event.client_payload.sha }}
-          echo "${{ github.event.event_type }}"
+
+      - name: Log 2
+        uses: actions/github-script@0.9.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            console.log('${{ github.event }}')
