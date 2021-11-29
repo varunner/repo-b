@@ -10,7 +10,7 @@ jobs:
   execute:
     runs-on: ubuntu-18.04
     outputs:
-      payload: ${{ github.event.client_payload }}
+      payload: ${{ toJSON(github.event.client_payload) }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
