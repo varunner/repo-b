@@ -9,13 +9,15 @@ on:
 jobs:
   execute:
     runs-on: ubuntu-18.04
+    outputs:
+      payload: ${{ github.event.client_payload }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       
       - name: Test
         run: cat test.txt
-
+      
       - name: Log
         shell: bash
         run: |
